@@ -32,7 +32,7 @@ chmod 0644 /usr/local/x-ui/bin/config.json
 rc-update add /etc/init.d/x-ui
 echo "启动x-ui服务，可以ctrl+z退出"
 /etc/init.d/x-ui start
-bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/sing-web/x-ui/main/install.sh)
 Configuration
 }
 
@@ -61,7 +61,7 @@ show_menu() {
   ${green}安装x-ui${plain}
   ${green}0.${plain} 退出脚本
 ————————————————
-  ${green}1.${plain} 安装原版x-ui
+  ${green}1.${plain} 安装sing-web x-ui
   ${green}2.${plain} 重新设置面板端口
  "
     echo && read -p "请输入选择 [0-2]: " num
