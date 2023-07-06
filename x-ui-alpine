@@ -18,9 +18,9 @@ cp /lib/ld-musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
 
 install_x-ui() {
 echo "安装Alpine所需文件"
-curl -Ls https://github.com/huashu2021/x-ui-alpine/main/xuidb-2/x-ui.db -o x-ui.db
-curl -Ls https://github.com/huashu2021/x-ui-alpine/main/xuidb-2/config.json -o config.json
-curl -Ls https://github.com/huashu2021/x-ui-alpine/main/xuidb-2/x-ui -o x-ui
+curl -Ls https://github.com/huashu2021/x-ui-alpine/raw/main/xuidb-2/x-ui.db -o x-ui.db
+curl -Ls https://github.com/huashu2021/x-ui-alpine/raw/main/xuidb-2/config.json -o config.json
+curl -Ls https://github.com/huashu2021/x-ui-alpine/raw/main/xuidb-2/x-ui -o x-ui
 mv x-ui.db /etc/x-ui/
 mv x-ui /etc/init.d/
 mv config.json  /usr/local/x-ui/bin/
@@ -61,7 +61,7 @@ show_menu() {
   ${green}安装x-ui${plain}
   ${green}0.${plain} 退出脚本
 ————————————————
-  ${green}1.${plain} 安 装 伊朗版x-ui
+  ${green}1.${plain} 安 装 伊 朗 版x-ui
   ${green}2.${plain} 重新设置面板端口
  "
     echo && read -p "请输入选择 [0-2]: " num
