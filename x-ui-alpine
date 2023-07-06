@@ -61,7 +61,7 @@ show_menu() {
   ${green}安装x-ui${plain}
   ${green}0.${plain} 退出脚本
 ————————————————
-  ${green}1.${plain} 安装伊朗版x-ui
+  ${green}1.${plain} 安装伊朗版 x-ui
   ${green}2.${plain} 重新设置面板端口
  "
     echo && read -p "请输入选择 [0-2]: " num
