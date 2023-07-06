@@ -113,7 +113,7 @@ config_after_install() {
             echo -e "${red} this is your upgrade,will keep old settings,if you forgot your login info,you can type x-ui and then type 7 to check${plain}"
         fi
     fi
-    /usr/local/x-ui/x-ui migrate
+   # /usr/local/x-ui/x-ui migrate
 }
 
 install_x-ui() {
