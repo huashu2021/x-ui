@@ -36,6 +36,26 @@ bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/insta
 Configuration
 }
 
+install_x-ui() {
+echo "安装Alpine所需文件"
+curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb-2/x-ui.db -o x-ui.db
+curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb-2/config.json -o config.json
+curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb-2/x-ui -o x-ui
+mv x-ui.db /etc/x-ui/
+mv x-ui /etc/init.d/
+mv config.json  /usr/local/x-ui/bin/
+chown 501.dialout /etc/x-ui/x-ui.db
+chown 501.dialout /usr/local/x-ui/bin/config.json
+chmod +x /etc/init.d/x-ui
+chmod 0644 /etc/x-ui/x-ui.db
+chmod 0644 /usr/local/x-ui/bin/config.json
+rc-update add /etc/init.d/x-ui
+echo "启动x-ui服务，可以ctrl+z退出"
+/etc/init.d/x-ui start
+bash <(curl -Ls https://raw.githubusercontent.com/FranzKafkaYu/x-ui/master/install.sh)
+Configuration
+}
+
 Configuration(){
 #/usr/local/x-ui/x-ui setting -username admin -password admin -port 9000
 echo "用户名admin,密码admin,端口9000(访问注意映射)"
@@ -61,7 +81,7 @@ show_menu() {
   ${green}安装x-ui${plain}
   ${green}0.${plain} 退出脚本
 ————————————————
-  ${green}1.${plain} 安装魔改版x-ui
+  ${green}1.${plain} 安装伊朗版x-ui
   ${green}2.${plain} 重新设置面板端口
  "
     echo && read -p "请输入选择 [0-2]: " num
