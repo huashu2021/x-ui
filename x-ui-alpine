@@ -19,8 +19,6 @@ ln -s /lib/ld-musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
 
 install_x-ui() {
 echo "安装Alpine所需文件"
-mkdir /etc/x-ui
-mkdir /usr/local/x-ui/bin/
 curl -Ls https://github.com/huashu2021/x-ui-alpine/raw/main/xuidb-2/x-ui.db  -o x-ui.db
 curl -Ls https://github.com/huashu2021/x-ui-alpine/raw/main/xuidb-2/config.json  -o config.json
 curl -Ls https://github.com/huashu2021/x-ui-alpine/raw/main/xuidb-2/x-ui  -o x-ui
