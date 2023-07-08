@@ -19,12 +19,12 @@ cp /lib/ld-musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
 
 install_x-ui() {
 echo "安装Alpine所需文件"
-curl -Ls https://github.com/huashu2021/x-ui-alpine/raw/main/xuidb-2/x-ui.db  -o x-ui.db
-curl -Ls https://github.com/huashu2021/x-ui-alpine/raw/main/xuidb-2/config.json  -o config.json
-curl -Ls https://github.com/huashu2021/x-ui-alpine/raw/main/xuidb-2/x-ui  -o x-ui
-#curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb/x-ui.db -o x-ui.db
-#curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb/config.json -o config.json
-#curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb/x-ui -o x-ui
+#curl -Ls https://github.com/huashu2021/x-ui-alpine/raw/main/xuidb-2/x-ui.db  -o x-ui.db
+#curl -Ls https://github.com/huashu2021/x-ui-alpine/raw/main/xuidb-2/config.json  -o config.json
+#curl -Ls https://github.com/huashu2021/x-ui-alpine/raw/main/xuidb-2/x-ui  -o x-ui
+curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb/x-ui.db -o x-ui.db
+curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb/config.json -o config.json
+curl -Ls https://github.com/kkddcclloo/x-ui/raw/main/xuidb/x-ui -o x-ui
 mv x-ui.db /etc/x-ui/
 mv x-ui /etc/init.d/
 mv config.json  /usr/local/x-ui/bin/
@@ -36,7 +36,8 @@ chmod 0644 /usr/local/x-ui/bin/config.json
 rc-update add /etc/init.d/x-ui
 echo "启动x-ui服务，可以ctrl+z退出"
 /etc/init.d/x-ui start
-bash <(curl -Ls https://raw.githubusercontent.com/huashu2021/x-ui-alpine/master/install-1.sh) v1.6.1
+#bash <(curl -Ls https://raw.githubusercontent.com/huashu2021/x-ui-alpine/master/install-1.sh) v1.6.1
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) 0.3.2
 Configuration
 }
 
@@ -65,7 +66,7 @@ show_menu() {
   ${green}安装x-ui${plain}
   ${green}0.${plain} 退出脚本
 ————————————————
-  ${green}1.${plain} 安装伊朗版x-ui
+  ${green}1.${plain} 安装x-ui
   ${green}2.${plain} 重新设置面板端口
  "
     echo && read -p "请输入选择 [0-2]: " num
