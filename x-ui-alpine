@@ -36,8 +36,8 @@ chmod 0644 /usr/local/x-ui/bin/config.json
 rc-update add /etc/init.d/x-ui
 echo "启动x-ui服务，可以ctrl+z退出"
 /etc/init.d/x-ui start
-#bash <(curl -Ls https://raw.githubusercontent.com/huashu2021/x-ui-alpine/master/install-1.sh) v1.6.1
-bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) 0.3.2
+bash <(curl -Ls https://raw.githubusercontent.com/huashu2021/x-ui-alpine/master/install-1.sh) v1.6.1
+#bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh) 0.3.2
 Configuration
 }
 
